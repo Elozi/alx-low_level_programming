@@ -1,3 +1,4 @@
 #!/bin/bash
-gcc -c -Werror -Wall -Wextra -pedantic -std=gnu89 *.c
-ar -r liball.a *.o
+gcc -Wall -pedantic -Werror -Wextra -c *.c
+ar -rc liball.a *.o
+ranlib liball.a
