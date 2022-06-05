@@ -218,7 +218,7 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 	}
 
 	if (e_ident[EI_CLASS] == ELFCLASS32)
-		printf("%#x\n", (unsigned int)e_entry);
+	printf("%#x\n", (unsigned int)e_entry);
 
 	else
 		printf("%#lx\n", e_entry);
@@ -238,7 +238,9 @@ void close_elf(int elf)
 			"Error: Can't close fd %d\n", elf);
 		exit(98);
 	}
-}/**
+}
+
+/**
  * main - Displays the information contained in the
  *        ELF header at the start of an ELF file.
  * @argc: The number of arguments supplied to the program.
@@ -274,6 +276,8 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		close_elf(fd);
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
+	}
+
 	}check_elf(header->e_ident);
 	printf("ELF Header:\n");
 	print_magic(header->e_ident);
